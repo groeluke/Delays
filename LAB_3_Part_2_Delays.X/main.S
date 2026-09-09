@@ -39,36 +39,43 @@ Setup:
     ; add device setup here
     
     ;         Bank 0
-    BCF 0x03,6  ;set bank 0
-    BCF 0x03,5  ;set bank 0
+    BCF 0x03,6  ;Set Bank 0
+    BCF 0x03,5  ;Set Bank 0
     CLRF 0x06   ;Setting PortB on reset low
     
     ;         Bank 1
-    BCF 0x03,6  ;set bank 1
-    BSF 0x03,5  ;set bank 1
+    BCF 0x03,6  ;Set Bank 1
+    BSF 0x03,5  ;Set Bank 1
     CLRF 0x86   ;Set PortB as an output TRISB
     
     ;         Bank 2
-    BSF 0x03,6  ;set bank 2
-    BCF 0x03,5  ;set bank 2
+    BSF 0x03,6  ;Set Bank 2
+    BCF 0x03,5  ;Set Bank 2
     BSF 0x09,1  ;Setting Bit 1 High for CM2CON1
     
     ;         Bank 3
-    BSF 0x03,6  ;set bank 3
-    BSF 0x03,5  ;set bank 3
+    BSF 0x03,6  ;Set Bank 3
+    BSF 0x03,5  ;Set Bank 3
     CLRF 0x89   ;Setting the I/O to digital ANSELH
-
+    
+    ;Reset to Bank 0
+    BCF 0x03,6  ;Set Bank 0
+    BCF 0x03,5  ;Set Bank 0
+    
     GOTO Main
     
-    
-    Main:
-	; main code goes here
-	
-	;Reset to Bank 0
-        BCF 0x03,6  ;set bank 0 - 1 Tcy
-        BCF 0x03,5  ;set bank 0 - 1 Tcy
-	INCF 0x06,1 ; increment PortB and place result in PortB - 1 Tcy
+    count EQU 0x20 ;use data memory address 0x20 as an 8-bit loop counter  
 
-	GOTO Main ;2 Tcy
-	
+    Main:
+        MOVLW 0x01       ;1 Tcy increment by 1
+        XORWF 0x06,1     ;1 Tcy inverter and increment by 1
+
+        MOVLW 0x0F       ;1 Tcy move W=15 to count
+        MOVWF count      ;1 Tcy make count equal 15
+                         ;Delay loop is equals 44 Tcy when count is 15         
+        DECFSZ count,1   ;1 Tcy if not zero, 2 Tcy if zero
+        GOTO $-1         ;2 Tcy delay runs 15 times before skiping
+
+    GOTO   Main          ;2Tcy
+    
     End

@@ -2378,7 +2378,6 @@ Setup:
 
     Main:
  ; main code goes here
-
  ;Reset to Bank 0
         BCF 0x03,6 ;set bank 0 - 1 Tcy
         BCF 0x03,5 ;set bank 0 - 1 Tcy

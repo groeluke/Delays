@@ -57,18 +57,17 @@ Setup:
     BSF 0x03,6  ;set bank 3
     BSF 0x03,5  ;set bank 3
     CLRF 0x89   ;Setting the I/O to digital ANSELH
-
+    
     GOTO Main
     
     
     Main:
 	; main code goes here
-	
 	;Reset to Bank 0
         BCF 0x03,6  ;set bank 0 - 1 Tcy
         BCF 0x03,5  ;set bank 0 - 1 Tcy
 	INCF 0x06,1 ; increment PortB and place result in PortB - 1 Tcy
-
+	
 	GOTO Main ;2 Tcy
 	
     End
