@@ -1,7 +1,7 @@
     ; Luke Groesbeck
     ; RCET3373
     ; LAB 3
-    ; https://github.com/groeluke/Delays/tree/main/LAB_3_Part_3_Delays.X
+    ; https://github.com/groeluke/Delays/tree/main/LAB_3_Part_4_Delays.X
     
 ; PIC16F883 Configuration Bit Settings
 
@@ -72,36 +72,40 @@ Setup:
     incount EQU 0x22 ;use data memory address 0x22 as an 8-bit loop counter
  
     Main:
-        MOVLW 0x01         ;1 Tcy increment by 1
-        XORWF 0x06,1       ;1 Tcy inverter 1
-	
 	MOVLW 0x05         ;1 Tcy toggle the display 5 and 0
 	XORWF 0x07,1       ;1 Tcy send 5 to portc to display
-	
-	MOVLW 0x0A         ;1 Tcy move W=10 to count
-        MOVWF maincount    ;1 Tcy make count equal 10
-	NOP                ;1 Tcy
-	NOP                ;1 Tcy
-	NOP                ;1 Tcy
-	
-	MainDelayLoop:     ;MainDelay Loop 
-	MOVLW 0x63         ;1 Tcy move W=99 to count
-        MOVWF outcount     ;1 Tcy make count equal 99
-        
-	OutDelayLoop:      ;OutDelay Loop
-        MOVLW 0xA7         ;1 Tcy move W=167 to count
-        MOVWF incount      ;1 Tcy make count equal 167
-	
-        InDelayLoop:       ;InDelay loop Tcy when count is 167        
-        DECFSZ incount,1   ;1 Tcy if not zero, 2 Tcy if zero
-        GOTO InDelayLoop   ;2 Tcy delay runs 167 times
-	
-	DECFSZ outcount,1  ;1 Tcy if not zero, 2 Tcy if zero
-	GOTO OutDelayLoop  ;2 Tcy delay runs 99 times before skiping
-	
-	DECFSZ maincount,1 ;1 Tcy if not zero, 2 Tcy if zero
-	Goto MainDelayLoop ;2 Tcy delay runs 10 times before skiping
 
-    GOTO Main            ;2Tcy
+	CALL LongDelay     ;2 Tcy CALL does the whole delay, then returns here
+
+    GOTO Main            ;2 Tcy
+
+    LongDelay:
+	MOVLW 0x4F         ;1 Tcy move W=79 to count
+        MOVWF maincount     ;1 Tcy make count 79
+
+    MainDelayLoop:
+	MOVLW 0x17         ;1 Tcy move W=23 to count
+        MOVWF outcount     ;1 Tcy make count 23
+
+    OutDelayLoop:
+        CALL ShortDelay    ;2 Tcy CALL, runs ShortDelay, then returns here
+
+	DECFSZ outcount,1  ;1 Tcy if not zero, 2 Tcy if zero
+	GOTO OutDelayLoop  ;2 Tcy runs 23 times before skipping
+
+	DECFSZ maincount,1  ;1 Tcy if not zero, 2 Tcy if zero
+	GOTO MainDelayLoop  ;2 Tcy runs 79 times before skipping
+
+	RETURN             ;2 Tcy back to Main
+
+    ShortDelay:
+        MOVLW 0x59         ;1 Tcy move W=89 to count
+        MOVWF incount      ;1 Tcy make count 89
+
+    InDelayLoop:
+        DECFSZ incount,1   ;1 Tcy if not zero, 2 Tcy if zero
+        GOTO InDelayLoop   ;2 Tcy runs 89 times before skipping
+
+	RETURN             ;2 Tcy back to OutDelayLoop
     
     End
