@@ -2341,6 +2341,10 @@ ENDM
 # 8 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.inc" 2 3
 # 28 "main.S" 2
 
+    maincount EQU 0x20 ;use data memory address 0x20 as an 8-bit loop counter
+    outcount EQU 0x21 ;use data memory address 0x21 as an 8-bit loop counter
+    incount EQU 0x22 ;use data memory address 0x22 as an 8-bit loop counter
+
 ; Reset Vector at 0000h. Execution starts here after reset.
 PSECT resetVect,class=CODE,delta=2
 ResetVector:
@@ -2382,13 +2386,9 @@ Setup:
 
     GOTO Main
 
-    maincount EQU 0x20 ;use data memory address 0x20 as an 8-bit loop counter
-    outcount EQU 0x21 ;use data memory address 0x21 as an 8-bit loop counter
-    incount EQU 0x22 ;use data memory address 0x22 as an 8-bit loop counter
-
     Main:
         MOVLW 0x01 ;1 Tcy increment by 1
-        XORWF 0x06,1 ;1 Tcy inverter and increment by 1
+        XORWF 0x06,1 ;1 Tcy inverter 1
 
  MOVLW 0x05 ;1 Tcy toggle the display 5 and 0
  XORWF 0x07,1 ;1 Tcy send 5 to portc to display

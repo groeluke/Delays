@@ -11,8 +11,8 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$build/default/debug/main.o
-code CODE 0 8 8 26 2 1
+$build/default/production/main.o
+code CODE 0 8 8 25 2 1
 resetVect CODE 0 0 0 1 2 1
 config CONFIG 4 2007 2007 2 2 1
 # %UNUSED Section
@@ -28,12 +28,12 @@ BANK0 20-6F 1
 BANK1 A0-EF 1
 BANK2 120-16F 1
 CONST 1-7 2
-CONST 2E-FFF 2
+CONST 2D-FFF 2
 ENTRY 1-7 2
-ENTRY 2E-FFF 2
+ENTRY 2D-FFF 2
 IDLOC 2000-2003 2
 CODE 1-7 2
-CODE 2E-FFF 2
+CODE 2D-FFF 2
 SFR0 2-F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -41,9 +41,9 @@ SFR3 180-1EF 1
 COMMON 70-7F 1
 EEDATA 2100-21FF 2
 STRCODE 1-7 2
-STRCODE 2E-FFF 2
+STRCODE 2D-FFF 2
 STRING 1-7 2
-STRING 2E-FFF 2
+STRING 2D-FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -57,46 +57,45 @@ STRING 2E-FFF 2
 # are in ascending order of addresses.
 # All other numeric values are in decimal.
 %LINETAB
-$build/default/debug/main.o
-0 resetVect CODE >36:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-8 code CODE >46:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-9 code CODE >47:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-A code CODE >48:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-B code CODE >49:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-C code CODE >50:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-D code CODE >53:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-E code CODE >54:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-F code CODE >55:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-10 code CODE >56:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-11 code CODE >59:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-12 code CODE >60:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-13 code CODE >61:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-14 code CODE >64:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-15 code CODE >65:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-16 code CODE >66:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-17 code CODE >69:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-18 code CODE >70:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-19 code CODE >72:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-1A code CODE >75:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-1B code CODE >76:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-1C code CODE >78:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-1D code CODE >79:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-1E code CODE >81:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-1F code CODE >82:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-20 code CODE >83:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-21 code CODE >84:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-22 code CODE >85:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-23 code CODE >88:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-24 code CODE >89:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-25 code CODE >92:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-26 code CODE >93:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-27 code CODE >96:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-28 code CODE >97:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-29 code CODE >99:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-2A code CODE >100:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-2B code CODE >102:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-2C code CODE >103:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
-2D code CODE >105:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.S
+$build/default/production/main.o
+0 resetVect CODE >32:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+8 code CODE >42:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+9 code CODE >43:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+A code CODE >44:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+B code CODE >45:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+C code CODE >46:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+D code CODE >49:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+E code CODE >50:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+F code CODE >51:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+10 code CODE >52:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+11 code CODE >55:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+12 code CODE >56:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+13 code CODE >57:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+14 code CODE >60:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+15 code CODE >61:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+16 code CODE >62:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+17 code CODE >65:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+18 code CODE >66:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+19 code CODE >68:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+1A code CODE >75:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+1B code CODE >76:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+1C code CODE >78:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+1D code CODE >80:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+1E code CODE >83:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+1F code CODE >84:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+20 code CODE >87:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+21 code CODE >88:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+22 code CODE >91:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+23 code CODE >93:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+24 code CODE >94:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+25 code CODE >96:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+26 code CODE >97:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+27 code CODE >99:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+28 code CODE >102:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+29 code CODE >103:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+2A code CODE >106:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+2B code CODE >107:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
+2C code CODE >109:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_4_Delays.X\main.S
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -109,23 +108,23 @@ F code CODE >55:C:\Users\lukeg\Documents\github\Lab3\LAB_3_Part_3_Delays.X\main.
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-__Hspace_0 5C 0 ABS 0 - -
+__Hspace_0 5A 0 ABS 0 - -
 __Hspace_1 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
-__Hudata_bank0 5C 0 ABS 0 udata_bank0 -
-__Hudata_bank1 5C 0 ABS 0 udata_bank1 -
-__Hudata_bank2 5C 0 ABS 0 udata_bank2 -
+__Hudata_bank0 5A 0 ABS 0 udata_bank0 -
+__Hudata_bank1 5A 0 ABS 0 udata_bank1 -
+__Hudata_bank2 5A 0 ABS 0 udata_bank2 -
 __L__absolute__ 0 0 ABS 0 __absolute__ -
-__Hedata 5C 0 ABS 0 edata -
-__Hudata 5C 0 ABS 0 udata -
+__Hedata 5A 0 ABS 0 edata -
+__Hudata 5A 0 ABS 0 udata -
 __Hconfig 4012 0 CONFIG 4 config -
-__Ledata 5C 0 ABS 0 edata -
-__Ludata 5C 0 ABS 0 udata -
-__Hcode 5C 0 CODE 0 code -
-__Hdata 5C 0 ABS 0 data -
+__Ledata 5A 0 ABS 0 edata -
+__Ludata 5A 0 ABS 0 udata -
+__Hcode 5A 0 CODE 0 code -
+__Hdata 5A 0 ABS 0 data -
 __Lcode 10 0 CODE 0 code -
-__Ldata 5C 0 ABS 0 data -
+__Ldata 5A 0 ABS 0 data -
 __S0 0 0 ABS 0 - -
 __S1 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
@@ -135,13 +134,13 @@ __Lspace_1 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
 __HresetVect 2 0 CODE 0 resetVect -
-__Ludata_bank0 5C 0 ABS 0 udata_bank0 -
-__Ludata_bank1 5C 0 ABS 0 udata_bank1 -
-__Ludata_bank2 5C 0 ABS 0 udata_bank2 -
+__Ludata_bank0 5A 0 ABS 0 udata_bank0 -
+__Ludata_bank1 5A 0 ABS 0 udata_bank1 -
+__Ludata_bank2 5A 0 ABS 0 udata_bank2 -
 __H__absolute__ 0 0 ABS 0 __absolute__ -
 __LresetVect 0 0 CODE 0 resetVect -
-__Hudata_shr 5C 0 ABS 0 udata_shr -
-__Ludata_shr 5C 0 ABS 0 udata_shr -
+__Hudata_shr 5A 0 ABS 0 udata_shr -
+__Ludata_shr 5A 0 ABS 0 udata_shr -
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -166,7 +165,7 @@ __Ludata_shr 5C 0 ABS 0 udata_shr -
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-code 0 8 10 26 2
+code 0 8 10 25 2
 resetVect 0 0 0 1 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

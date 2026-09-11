@@ -73,18 +73,18 @@ Setup:
  
     Main:
 	MOVLW 0x05         ;1 Tcy toggle the display 5 and 0
-	XORWF 0x07,1       ;1 Tcy send 5 to portc to display
+	XORWF 0x07,1       ;1 Tcy send 5 to PortC to display
 
 	CALL LongDelay     ;2 Tcy CALL does the whole delay, then returns here
 
     GOTO Main            ;2 Tcy
 
     LongDelay:
-	MOVLW 0x4F         ;1 Tcy move W=79 to count
+	MOVLW 0x4F         ;1 Tcy move W 79 to count
         MOVWF maincount     ;1 Tcy make count 79
 
     MainDelayLoop:
-	MOVLW 0x17         ;1 Tcy move W=23 to count
+	MOVLW 0x17         ;1 Tcy move W 23 to count
         MOVWF outcount     ;1 Tcy make count 23
 
     OutDelayLoop:
@@ -99,7 +99,7 @@ Setup:
 	RETURN             ;2 Tcy back to Main
 
     ShortDelay:
-        MOVLW 0x59         ;1 Tcy move W=89 to count
+        MOVLW 0x59         ;1 Tcy move W 89 to count
         MOVWF incount      ;1 Tcy make count 89
 
     InDelayLoop:
